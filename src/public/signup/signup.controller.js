@@ -17,7 +17,7 @@ function SignupController(MenuService,$timeout,$state) {
   $ctrl.email ='';
   $ctrl.phone ='';
   $ctrl.completed = false;
-  
+  $ctrl.index = '-1';
   
   $ctrl.clearDisplayMsg = function(){
 	$ctrl.menuShowFlag = null;
@@ -34,14 +34,14 @@ function SignupController(MenuService,$timeout,$state) {
 			if($ctrl.items.length ==0 ){
 				$ctrl.menuShowFlag = 'false';			
 			}else{				
-				var index = -1;				
+				$ctrl.index = -1;				
 				for(var i=0 ;i< $ctrl.items.length ; i++ ){						
 					if($ctrl.items[i].short_name.toUpperCase() == $ctrl.menuno.toUpperCase() ){
 						$ctrl.menuFullName = $ctrl.items[i].name;
-						index = i;
+						$ctrl.index = i;
 					}
 				}				
-				if(index != -1){					
+				if($ctrl.index != -1){					
 					$ctrl.menuShowFlag = 'true';
 				}else{					
 					$ctrl.menuShowFlag = 'false';
@@ -73,7 +73,8 @@ function SignupController(MenuService,$timeout,$state) {
 		'email' : $ctrl.email,
 		'phone' : $ctrl.phone,
 		'menuno' : $ctrl.menuno,
-		'completed' : $ctrl.completed
+		'completed' : $ctrl.completed,
+		'menudetails' :$ctrl.items[$ctrl.index]
 	});
 	
 	var registrationMessage = "User is Successfully Registered.";
