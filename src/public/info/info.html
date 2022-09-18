@@ -1,0 +1,17 @@
+<div class="container">
+	<div ng-hide="infoCtrl.userInfo.completed">
+		<h1 style="color:white;">Not Signed Up Yet. Sign up Now!</h1> 
+	</div>
+
+	<div id="info" ng-if="infoCtrl.userInfo.completed"> 
+		<h1 style="color:green;"> Your Signed Up Details </h1>
+		<table style="background-color:black; " width="40%">		
+			<tr style="border:3px green solid" ><td width="20%">First Name 	</td><td width="20%">{{ infoCtrl.userInfo.firstName}} 	</td></tr>
+			<tr style="border:3px green solid" ><td width="20%">Last Name 	</td><td width="20%">{{ infoCtrl.userInfo.lastName}} 	</td></tr>
+			<tr style="border:3px green solid" ><td width="20%">Email ID 	</td><td width="20%">{{ infoCtrl.userInfo.email}} 		</td></tr>
+			<tr style="border:3px green solid" ><td width="20%">Phone No 	</td><td width="20%">{{ infoCtrl.userInfo.phone}} 		</td></tr>
+			<tr style="border:3px green solid" ><td width="20%">Favourite Menu No </td><td width="20%">{{ infoCtrl.userInfo.menuno}}  		</td></tr>
+			</tr>
+		</table>		
+	</div> 
+</div> 
